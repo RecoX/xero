@@ -25,7 +25,7 @@ const InvoiceLine = require('./invoiceLine.js');
 function Main() {
     console.log("Welcome to Xero Tech Test!");
 
-    CreateInvoiceWithOneIem();
+    CreateInvoiceWithOneItem();
     CreateInvoiceWithMultipleItemsAndQuantities();
     RemoveItem();
     MergeInvoices();
@@ -36,7 +36,8 @@ function Main() {
 function CreateInvoiceWithOneItem() {
     const invoice = new Invoice();
     invoice.AddInvoiceLine(new InvoiceLine(1, 6.99, 1, "Apple"));
-    console.log(invoice.LineItems);
+    // console.log(invoice.LineItems);
+    //OK
 }
 
 function CreateInvoiceWithMultipleItemsAndQuantities () {
@@ -44,7 +45,7 @@ function CreateInvoiceWithMultipleItemsAndQuantities () {
     invoice.AddInvoiceLine(new InvoiceLine(1, 10.21, 4, "Banana"));
     invoice.AddInvoiceLine(new InvoiceLine(2, 5.21, 1, "Orange" ));
     invoice.AddInvoiceLine(new InvoiceLine(3, 6.21, 5, "Pineapple"));
-    console.log(invoice.GetTotal());
+    // console.log(`There are ${invoice.GetTotal()} items in this invoice`);
 }
 
 function RemoveItem() {
@@ -55,7 +56,7 @@ function RemoveItem() {
 
     invoice.RemoveInvoiceLine(1);
 
-    console.log(invoice.GetTotal());
+    // console.log(invoice.GetTotal());
 }
 
 function MergeInvoices() {
@@ -70,7 +71,7 @@ function MergeInvoices() {
 
     invoice1.MergeInvoices(invoice2);
 
-    console.log(invoice1.GetTotal());
+    // console.log(invoice1.GetTotal());
 }
 
 function CloneInvoice() {
@@ -80,7 +81,7 @@ function CloneInvoice() {
     invoice.AddInvoiceLine(new InvoiceLine(2, 10.49, 2, "Watermelon"));
 
     const ClonedInvoice = invoice.Clone();
-    console.log(ClonedInvoice.GetTotal());
+    // console.log(ClonedInvoice.GetTotal());
 }
 
 function InvoiceToString() {
@@ -92,7 +93,7 @@ function InvoiceToString() {
         ]
     );
 
-    console.log(invoice);
+    // console.log(invoice);
 }
 
 

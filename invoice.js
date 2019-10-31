@@ -1,3 +1,5 @@
+const cloneDeep = require('lodash.clonedeep');
+
 class Invoice {
     constructor(InvoiceDate = new Date(), InvoiceNumber = "", LineItems = []) {
         this.InvoiceDate = InvoiceDate;
@@ -21,7 +23,7 @@ class Invoice {
     };
 
     GetTotal() {
-        return 0;
+        return this.LineItems.length;
     };
 
     MergeInvoices() {
@@ -29,7 +31,8 @@ class Invoice {
     }
 
     Clone() {
-        return null;
+        // We create a deep copy of the invoice instead of a shallow copy
+        return cloneDeep(this);
     };
 }
 
