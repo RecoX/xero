@@ -19,7 +19,7 @@ class Invoice {
      * Removes a line
     */
     RemoveInvoiceLine(id) {
-        return null;
+        this.LineItems = this.LineItems.filter(el => el.InvoiceLineId !== id)
     };
 
     GetTotal() {
