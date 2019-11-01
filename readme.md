@@ -8,13 +8,12 @@ Instructions for test are listed in the comments at the top of index.js.
 
 Good luck!
 
-RUN CODE:
-
-node index.js
+Start Code:
+`npm install`
+`node index.js`
 
 RUN TESTS:
-
-npm test
+`npm test`
 
 This will run JEST test suite.
 
