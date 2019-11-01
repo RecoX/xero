@@ -7,3 +7,14 @@ Notes:
 Instructions for test are listed in the comments at the top of index.js.
 
 Good luck!
+
+RUN CODE:
+
+node index.js
+
+RUN TESTS:
+
+npm test
+
+This will run JEST test suite.
+
