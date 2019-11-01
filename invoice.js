@@ -1,8 +1,10 @@
 const cloneDeep = require('lodash.clonedeep');
 const crypto = require('crypto');
 
+const generateRandomId = () => crypto.randomBytes(20).toString('hex');
+
 class Invoice {
-    constructor(InvoiceDate = new Date(), InvoiceId = crypto.randomBytes(20).toString('hex'), LineItems = []) {
+    constructor(InvoiceDate = new Date(), InvoiceId = generateRandomId(), LineItems = []) {
         this.InvoiceDate = InvoiceDate;
         this.InvoiceId = InvoiceId;
         this.LineItems = LineItems;
@@ -48,7 +50,12 @@ class Invoice {
     */
     Clone() {
         // We create a deep copy of the invoice instead of a shallow copy
-        return cloneDeep(this);
+        let cloneInvoice = cloneDeep(this);
+
+        // Then we change the ID to make it unique.
+        cloneInvoice.InvoiceId = generateRandomId()
+
+        return cloneInvoice;
     };
 }
 

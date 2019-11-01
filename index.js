@@ -22,12 +22,6 @@
 const Invoice = require('./invoice.js');
 const InvoiceLine = require('./invoiceLine.js');
 
-    
-    
-    
-    
-    
-    
 const colorCreateInvoiceWithOneItem = '\x1b[33m%s\x1b[0m';
 const colorCreateInvoiceWithMultipleItemsAndQuantities  = '\x1b[01m%s\x1b[0m';
 const colorRemoveItem = '\x1b[07m%s\x1b[0m';
@@ -49,6 +43,7 @@ function Main() {
 function CreateInvoiceWithOneItem() {
     const invoice = new Invoice();
     invoice.AddInvoiceLine(new InvoiceLine(1, 6.99, 1, "Apple"));
+
     console.log(colorCreateInvoiceWithOneItem, `CreateInvoiceWithOneItem: ${JSON.stringify(invoice.LineItems)}`);
 }
 
@@ -57,7 +52,8 @@ function CreateInvoiceWithMultipleItemsAndQuantities () {
     invoice.AddInvoiceLine(new InvoiceLine(1, 10.21, 4, "Banana"));
     invoice.AddInvoiceLine(new InvoiceLine(2, 5.21, 1, "Orange" ));
     invoice.AddInvoiceLine(new InvoiceLine(3, 6.21, 5, "Pineapple"));
-    console.log(colorCreateInvoiceWithMultipleItemsAndQuantities, `CreateInvoiceWithMultipleItemsAndQuantities: There are ${invoice.GetTotal()} items in this invoice`);
+
+    console.log(colorCreateInvoiceWithMultipleItemsAndQuantities, `CreateInvoiceWithMultipleItemsAndQuantities: Invoice ID: ${invoice.InvoiceId} created succesfully. There are ${invoice.GetTotal()} items in this invoice`);
 }
 
 function RemoveItem() {
@@ -68,7 +64,7 @@ function RemoveItem() {
 
     invoice.RemoveInvoiceLine(1);
 
-    console.log(colorRemoveItem, `RemoveItem: There are ${invoice.GetTotal()} items in this invoice after we remove the desired item`);
+    console.log(colorRemoveItem, `RemoveItem: Invoice ID: ${invoice.InvoiceId} the invoice line was removed succesfully. There are ${invoice.GetTotal()} items left in this invoice after we remove the desired invoice line`);
 }
 
 function MergeInvoices() {
@@ -83,7 +79,7 @@ function MergeInvoices() {
 
     invoice1.MergeInvoices(invoice2);
 
-    console.log(colorMergeInvoices, `MergeInvoices: The invoice ${invoice1.InvoiceId} and the invoice ${invoice2.InvoiceId} were succesfully merged, now the invoice ${invoice1.InvoiceId} has ${invoice1.GetTotal()} invoices lines`);
+    console.log(colorMergeInvoices, `MergeInvoices: The invoice id ${invoice1.InvoiceId} and the invoice id ${invoice2.InvoiceId} were succesfully merged, now the invoice ${invoice1.InvoiceId} has ${invoice1.GetTotal()} invoices lines`);
 }
 
 function CloneInvoice() {
@@ -93,7 +89,7 @@ function CloneInvoice() {
     invoice.AddInvoiceLine(new InvoiceLine(2, 10.49, 2, "Watermelon"));
 
     const ClonedInvoice = invoice.Clone();
-    console.log(colorCloneInvoice, ClonedInvoice.GetTotal());
+    console.log(colorCloneInvoice, `CloneInvoice: The invoice id: ${invoice.InvoiceId} was cloned succesfully into the invoice id:${ClonedInvoice.InvoiceId} which has ${ClonedInvoice.GetTotal()} invoices elements`);
 }
 
 function InvoiceToString() {
@@ -105,7 +101,7 @@ function InvoiceToString() {
         ]
     );
 
-    console.log(colorInvoiceToString, invoice);
+    console.log(colorInvoiceToString, `InvoiceToString: ${JSON.stringify(invoice)}`);
 }
 
 
