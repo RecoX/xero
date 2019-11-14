@@ -1,3 +1,5 @@
+[![photo-2019-11-15-00-06-36.jpg](https://i.postimg.cc/YqC3z4Nz/photo-2019-11-15-00-06-36.jpg)](https://postimg.cc/HjFXpkhr)
+
 The solution proposed requires 4 different modules plus a database to persist data. This document details what is needed to achieve the goal.
 
 The reason of the use of the technologies proposed in this case is because with just one main language (Javascript/Typescript) we can build the entire system and the team does not need domain a vary of technologies, making it easy on induct people to start work on it.
