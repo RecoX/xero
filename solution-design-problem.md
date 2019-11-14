@@ -6,10 +6,14 @@ The reason of the use of the technologies proposed in this case is because with 
 
 # Modules needed:
 a - Database, to storage all the data
+
 b - Web API, the gateway to request or respond information to the different pieces of the system.
+
 c - Flight Board Client, The big ticket board in the airports.
+
 d - Webpage Client, The flight information needs to be viewable over the internet (so people can check their flight
 status before coming to the airport)
+
 e - Airport Manager, Part of the system where we can update the flight information.
 
 
@@ -60,8 +64,8 @@ With the following schema:
 ### b- Web API: The web API is the part of the system which is in charge to respond to the differents modules of the system.
 
 The stack proposed here is:
-Javascript or Typrescript
-Node.js / Express.js
+- Javascript or Typrescript
+- Node.js / Express.js
 
 This is a vital part of the system as is the only way all the applications can be populated with information and also the only way which all the different airlines can create and update flights.
 
@@ -96,10 +100,10 @@ We should send a POST request with the following information to update a flight:
 We should send an Authorization Token in the Header like this one:
 `Authorization Bearer 70fc17b92e631886bc553dbc3b91a7cc`
 
-If the Airline has access to edit the following flight we edit it and respond with a Http Code 200
-If the Airline has not access to edit the fligth we respond with a 401
-If the data provided is malformed we respond with 400
-If there is an Error in the API we respond with 500
+- If the Airline has access to edit the following flight we edit it and respond with a Http Code 200
+- If the Airline has not access to edit the fligth we respond with a 401
+- If the data provided is malformed we respond with 400
+- If there is an Error in the API we respond with 500
 
 IV- Socket connection endpoint to receive information in real time for the incoming fligths. 
 fligth/incoming/
@@ -135,7 +139,7 @@ II- Subscribe to a fligth to get information in real time about that particular 
 `fligth/incoming/:fligthNumber`.
 
 
-###e- Airport Manager, Part of the system where we can update the flight information.
+### e- Airport Manager, Part of the system where we can update the flight information.
 The technologies used for this module are:
 
 - HTML5
